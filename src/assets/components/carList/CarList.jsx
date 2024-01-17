@@ -1,8 +1,7 @@
-import CarItem from "../carItem/carItem";
-import { v4 as uuidv4 } from 'uuid';
 
-console.log(uuidv4());
-console.log(uuidv4());
+import { v4 as uuidv4 } from 'uuid';
+import Card from '../card/Card';
+
 const CarList = ({ cars }) => {
     // props ist auch eine Möglichkeit, mit dem Obj ist aber besser 
     // console.log("cars", cars);
@@ -21,7 +20,7 @@ const CarList = ({ cars }) => {
                 console.log(uuidv4());
                 return (
                     <div key={index}>
-                        <CarItem
+                        <Card
                             wurst={uuidv4()}
                             marke={car.marke}
                             farbe={car.farbe}

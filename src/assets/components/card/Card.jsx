@@ -1,4 +1,4 @@
-const CarItem = ({ marke, farbe, modell, Produktionsjahr, ps, wurst }) => {
+const Card = ({ marke, farbe, modell, Produktionsjahr, ps, wurst }) => {
     // console.log(props);
     console.log(wurst);
     return (
@@ -14,4 +14,4 @@ const CarItem = ({ marke, farbe, modell, Produktionsjahr, ps, wurst }) => {
     );
 }
 
-export default CarItem;
+export default Card;
