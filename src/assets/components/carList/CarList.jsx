@@ -1,28 +1,38 @@
 import CarItem from "../carItem/carItem";
+import { v4 as uuidv4 } from 'uuid';
 
-const CarList = (props) => {
-    console.log(props.cars);
+console.log(uuidv4());
+console.log(uuidv4());
+const CarList = ({ cars }) => {
+    // props ist auch eine Möglichkeit, mit dem Obj ist aber besser 
+    // console.log("cars", cars);
+    {/* !!!startet immer erst mit der manuellen eingabe!!! */ }
+    // ! DAS MACHEN WIR ABER NICHT :D
+    {/* <CarItem
+                marke={props.carArr[0].marke}
+                model={props.carArr[0].modell}
+                color={props.carArr[0].farbe}
+                year={props.carArr[0].produktionsjahr}
+                engine={props.carArr[0].ps}
+            /> */}
     return (
         <>
-            {/* <div>
-                <h2>Farbe:{props.cars[0].farbe}</h2>
-                <h2>Marke:{props.cars[0].marke}</h2>
-                <p>Model:{props.cars[0].modell}</p>
-                <p>Produktionsjahr:{props.cars[0].produktionsjahr}</p>
-                <p>PS: {props.cars[0].ps}</p>
-            </div> */}
-            <h1>Das ist ein CarList Component</h1>
-
-            {props.cars.map((car) => {
-                <CarItem
-                    carMarke={car.marke}
-                    farbe={car.farbe}
-                    modell={car.modell}
-                    Produktionsjahr={car.produktionsjahr}
-                    ps={car.ps}
-                />
-            })}
-
+            {cars.map((car, index) => {
+                console.log(uuidv4());
+                return (
+                    <div key={index}>
+                        <CarItem
+                            wurst={uuidv4()}
+                            marke={car.marke}
+                            farbe={car.farbe}
+                            modell={car.modell}
+                            Produktionsjahr={car.produktionsjahr}
+                            ps={car.ps}
+                        />
+                    </div>
+                )
+            }
+            )}
         </>
     );
 }
